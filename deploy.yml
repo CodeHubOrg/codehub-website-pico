@@ -13,7 +13,7 @@
   - name: Composer install pico
     composer:
       command: create-project
-      arguments: picocms/pico-composer .
+      arguments: picocms/pico-composer . ^2.0
       working_dir: "/var/www/{{ deploy_dir }}/public"
     when: vendor_exists.stat.exists == false
 
