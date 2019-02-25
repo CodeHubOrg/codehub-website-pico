@@ -1,0 +1,29 @@
+---
+- hosts: meraviglia
+  vars:
+    - deploy_dir: beta.codehub
+
+  tasks:
+
+  - name: Check if vendor dir exists
+    stat:
+      path: "/var/www/{{ deploy_dir }}/public/vendor"
+    register: vendor_exists
+
+  - name: Composer install pico
+    composer:
+      command: create-project
+      arguments: picocms/pico-composer .
+      working_dir: "/var/www/{{ deploy_dir }}/public"
+    when: vendor_exists.stat.exists == false
+
+
+  - name: rsync codehub files
+    synchronize:
+      src: "{{ playbook_dir }}/"
+      dest:
+        "/var/www/{{ deploy_dir }}/public/"
+      rsync_opts:
+        - "--exclude=content"
+        - "--exclude=scripts"
+      recursive: yes

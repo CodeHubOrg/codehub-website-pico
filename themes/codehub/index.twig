@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <title>{{ site_title }}{% if meta.title %} :: {{ meta.title }}{% endif %}</title>
+    {% if meta.description %}
+        <meta name="description" content="{{ meta.description|striptags }}" />
+    {% endif %}{% if meta.robots %}
+        <meta name="robots" content="{{ meta.robots }}" />
+    {% endif %}
+
+    {% if current_page %}
+        <link rel="canonical" href="{{ current_page.url }}" />
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ theme_url }}/css/screen.css" type="text/css" />
+     <link rel="shortcut icon" href="{{ theme_url }}/img/favicon.ico" />
+</head>
+<body class="index">
+
+    <header id="header">
+        <div class="inner heading margins-vert">
+         <h1>Codehub</h1>
+            <a href="/"><img class="codehub-logo" src="{{ theme_url }}/img/codehub.svg" onerror="this.src='{{ theme_url }}/img/codehub.png'" alt="CodeHub logo"></a>
+        </div>
+        {% block headertext %}
+            {% if "partials/header"|content %}
+                {{ "partials/header"|content }}
+            {% endif %}
+        {% endblock %}
+    </header>
+
+    <div class="container cf">
+        <div class="main-content">
+            <section class="main-content section">
+                {{ content }}
+                {% block donate %}
+                {% endblock %}
+                {% block content2 %}
+                {% endblock %}
+            </section>
+            {% block sponsors %}
+                {{ "partials/sponsors"|content }}
+            {% endblock %}
+        </div>
+          <footer id="footer">
+            <div class="inner">Codehub 2019</div>
+          </footer>
+    </div>
+
+
+</body>
+</html>

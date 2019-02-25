@@ -1,0 +1,6 @@
+---
+site_title: Codehub
+theme: codehub
+
+theme_config:
+    widescreen: true

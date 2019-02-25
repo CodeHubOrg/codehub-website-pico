@@ -1,0 +1,410 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'acherus_grotesqueregular';
+  src: url("../fonts/acherus_grotesque_-_regular-webfont.eot");
+  src: url("../fonts/acherus_grotesque_-_regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/acherus_grotesque_-_regular-webfont.woff2") format("woff2"), url("../fonts/acherus_grotesque_-_regular-webfont.woff") format("woff"), url("../fonts/acherus_grotesque_-_regular-webfont.ttf") format("truetype"), url("../fonts/acherus_grotesque_-_regular-webfont.svg#acherus_grotesqueregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* @group general */
+body {
+  font-size: 100%;
+  line-height: 1.5em;
+  font-family: "Trebuchet MS", Helvetica Neue, Arial, sans-serif;
+}
+
+p {
+  margin-bottom: 0.75em;
+}
+
+a:link,
+a:visited {
+  color: #e2231a;
+}
+
+
+.inner {
+  width: 88%;
+  margin: 0 auto;
+}
+
+.main-content section p {
+  width: 88%;
+  margin: 0 auto 0.75em;
+}
+
+.margins-vert {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.inline-list li {
+  display: inline-block;
+  margin-right: 0.2em;
+}
+
+
+ul li {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.clear {
+  clear: both;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+  *zoom: 1;
+}
+
+/* @end general */
+/* @group layout */
+.inner.heading {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.codehub-logo {
+  width: 246px;
+  height: 62px;
+  margin: 13px 0 8px 30px;
+}
+
+#footer {
+  background: #fff;
+}
+#footer .inner {
+  padding: 13px 0;
+}
+
+/* @end layout */
+/* @group topography */
+h1 {
+  text-indent: -9999px;
+  height: 0;
+}
+
+h2 {
+  font-family: 'acherus_grotesqueregular', serif;
+  color: #222;
+  font-size: 1.3125em;
+  line-height: 1.14286em;
+  padding-left: 0.75em;
+}
+
+h3 {
+  background: #fff;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 1em;
+  color: #222;
+}
+
+#header h2 {
+  background: #fff;
+}
+
+.main-content h2 {
+  background: #fff;
+}
+
+/* @end typograpy */
+/* @group navigation */
+.nav {
+  background: #fff;
+  overflow: auto;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+.nav li {
+  width: 48.78049%;
+  float: left;
+  margin-right: 2.43902%;
+  display: inline;
+  text-align: center;
+  font-weight: bold;
+  background: #eedfdf;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  padding: 0.25em 0;
+}
+.nav li:nth-child(2n) {
+  float: right;
+  margin-right: 0;
+  *margin-left: -0.5em;
+}
+.nav li a {
+  text-decoration: none;
+  color: #444;
+}
+@media (min-width: 30em) {
+  .nav li {
+    width: 24.09639%;
+    float: left;
+    margin-right: 1.20482%;
+  }
+  .nav li:nth-child(2n) {
+    float: left;
+    margin-right: 1.20482%;
+  }
+  .nav li:nth-child(4n) {
+    float: right;
+    margin-right: 0;
+  }
+}
+.nav li.current, .nav li.section-active {
+  background: #dedede;
+}
+.nav li.gitlink a, .nav li.codehublink a {
+  color: #acc2be;
+}
+.nav li.gitlink {
+  background: #4D555B url(../img/octocat.png) no-repeat 5px 5px;
+}
+.nav li.codehublink {
+  background: url("../img/codehub.png") no-repeat scroll 5px 2px #4D555B;
+}
+
+/* @end group */
+/* @group elements-media */
+.media, .bd {
+  overflow: hidden;
+  _overflow: visible;
+  zoom: 1;
+}
+
+.media .img {
+  float: left;
+  margin-right: 1em;
+}
+
+.media .img img {
+  display: block;
+}
+
+.media .imgExt {
+  float: right;
+}
+
+.media .imgExt.left {
+  float: left;
+}
+
+/* @end codehub-pages */
+@media (min-width: 39em) {
+  /* @group general */
+  body {
+    background: #fff;
+    color: #222;
+    font-size: 1.31em;
+  }
+
+  .inner {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .margins-vert {
+    margin-bottom: 1.5em;
+  }
+
+  .main-content section p {
+    width: 100%;
+    margin-bottom: 1.5em;
+  }
+  /* @end general */
+  /* @group layout */
+  .container {
+    background: #fff;
+  }
+}
+@media (min-width: 39em) and (min-width: 39em) {
+  .profile .container, #header.inner, #footer .inner {
+    *zoom: 1;
+    max-width: 41.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile .container:after, #header .inner:after, #footer .inner:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@media (min-width: 39em) {
+  #header {
+    background: #fff;
+  }
+
+  #footer {
+    padding-left: 0;
+  }
+
+  .main-content {
+    background: #fff;
+  }
+
+  .organisers {
+    background: #fff;
+  }
+
+  footer {
+    padding-left: 0;
+  }
+
+  .main {
+    width: 41.43426%;
+    float: left;
+    margin-right: 0.39841%;
+    display: inline;
+    background: #fff;
+  }
+
+  .sidebar {
+    width: 58.16733%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -0.5em;
+    display: inline;
+    background: #fff;
+    padding-top: 90px;
+  }
+
+  .section {
+    padding-top: 0.75em;
+  }
+}
+@media (min-width: 39em) and (min-width: 39em) {
+  .section {
+    *zoom: 1;
+    max-width: 41.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@media (min-width: 39em) {
+  div.main-content {
+    width: 100%;
+    background: #fff;
+  }
+
+
+  /* @end layout */
+  /* @group typography */
+  #header p {
+    font-size: 1.125em;
+    line-height: 1.71429em;
+  }
+
+  .codehub-logo {
+    width: 328px;
+    height: 85px;
+    margin: 34px 0 21px 0;
+  }
+
+  h2, h3 {
+    font-weight: 700;
+    padding-left: 0;
+    color: #444;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    line-height: 2em;
+  }
+
+  h3 {
+    background: inherit;
+    font-weight: 400;
+    font-size: 1.3125em;
+    line-height: 1.14286em;
+  }
+
+}
