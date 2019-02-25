@@ -1,7 +1,8 @@
 ---
-- hosts: meraviglia
+- hosts: codehub
   vars:
     - deploy_dir: beta.codehub
+    # for live, switch to codehub
 
   tasks:
 
