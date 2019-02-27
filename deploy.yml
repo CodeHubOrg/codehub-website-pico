@@ -1,11 +1,10 @@
 ---
 - hosts: codehub
   vars:
-    - deploy_dir: beta.codehub
+    - deploy_dir: codehub
     # for live, switch to codehub
 
   tasks:
-
   - name: Check if vendor dir exists
     stat:
       path: "/var/www/{{ deploy_dir }}/public/vendor"
@@ -18,13 +17,12 @@
       working_dir: "/var/www/{{ deploy_dir }}/public"
     when: vendor_exists.stat.exists == false
 
-
   - name: rsync codehub files
     synchronize:
       src: "{{ playbook_dir }}/"
       dest:
         "/var/www/{{ deploy_dir }}/public/"
       rsync_opts:
-        - "--exclude=content"
+        - "--eclude=content"
         - "--exclude=scripts"
       recursive: yes
