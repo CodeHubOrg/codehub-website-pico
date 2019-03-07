@@ -28,20 +28,12 @@
         <nav>
           <div class="flex-nav">
           <ul>
-            <li {% if meta.title == "Formats" %} class="current" {% endif %}><a href="/formats">Formats</a></li>
-            <li {% if meta.title == "Code of Conduct"%} class="current" {% endif %} ><a href="/code-of-conduct">Code of Conduct</a></li>
+            <li {% if meta.title == "Formats" %} class="current" {% endif %}><a href="/activities">Activities</a></li>
             <li {% if meta.title == "Sponsoring" %} class="current" {% endif %}><a href="/sponsoring">Sponsoring</a></li>
+            <li {% if meta.title == "Code of Conduct"%} class="current" {% endif %} ><a href="/code-of-conduct">Code of Conduct</a></li>
           </ul>
           </div>
         </nav>
-            {% block headertext %}
-                {% if meta.title == "Home" %}
-                    {{ "partials/header"|content }}
-                {% endif %}
-                {% if meta.title == "Code of Conduct" %}
-                    {{ "code-of-conduct/partials/header"|content }}
-                {% endif %}
-            {% endblock %}
         </div>
     </header>
 

@@ -117,7 +117,6 @@ ul {
 
 ul li {
   list-style: disc;
-  list-style-position: inside;
 }
 
 
@@ -269,7 +268,7 @@ footer {
 }
 
 @media (min-width: 39em) {
-  #header p {
+  .intro p {
     font-size: 1.125em;
     line-height: 1.71429em;
   }
