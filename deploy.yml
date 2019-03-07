@@ -1,7 +1,7 @@
 ---
 - hosts: codehub
   vars:
-    - deploy_dir: codehub
+    - deploy_dir: beta.codehub
     # for live, switch to codehub
 
   tasks:
@@ -23,6 +23,6 @@
       dest:
         "/var/www/{{ deploy_dir }}/public/"
       rsync_opts:
-        - "--eclude=content"
+        - "--exclude=content"
         - "--exclude=scripts"
       recursive: yes

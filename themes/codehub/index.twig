@@ -19,33 +19,46 @@
      <link rel="shortcut icon" href="{{ theme_url }}/img/favicon.ico" />
 </head>
 <body class="index">
+    <div class="wrapper">
 
     <header id="header">
-        <div class="inner heading margins-vert">
+        <div class="container heading margins-vert">
          <h1>Codehub</h1>
             <a href="/"><img class="codehub-logo" src="{{ theme_url }}/img/codehub.svg" onerror="this.src='{{ theme_url }}/img/codehub.png'" alt="CodeHub logo"></a>
+        <nav>
+          <div class="flex-nav">
+          <ul>
+            <li {% if meta.title == "Formats" %} class="current" {% endif %}><a href="/formats">Formats</a></li>
+            <li {% if meta.title == "Code of Conduct"%} class="current" {% endif %} ><a href="/code-of-conduct">Code of Conduct</a></li>
+            <li {% if meta.title == "Sponsoring" %} class="current" {% endif %}><a href="/sponsoring">Sponsoring</a></li>
+          </ul>
+          </div>
+        </nav>
+            {% block headertext %}
+                {% if meta.title == "Home" %}
+                    {{ "partials/header"|content }}
+                {% endif %}
+                {% if meta.title == "Code of Conduct" %}
+                    {{ "code-of-conduct/partials/header"|content }}
+                {% endif %}
+            {% endblock %}
         </div>
-        {% block headertext %}
-            {% if "partials/header"|content %}
-                {{ "partials/header"|content }}
-            {% endif %}
-        {% endblock %}
     </header>
 
-    <div class="container cf">
+    <div class="container">
         <div class="main-content">
             <section class="main-content section">
                 {{ content }}
             </section>
-            {% block sponsors %}
-                {{ "partials/sponsors"|content }}
-            {% endblock %}
         </div>
-          <footer id="footer">
-            <div class="inner">Codehub 2019</div>
-          </footer>
+
     </div>
 
-
+    <div class="container">
+        <footer id="footer">
+           Codehub 2019
+        </footer>
+    </div>
+  </div>
 </body>
 </html>

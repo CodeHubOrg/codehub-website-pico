@@ -6,7 +6,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -82,6 +82,11 @@ a:visited {
   color: #e2231a;
 }
 
+.wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
 .inner {
   width: 88%;
   margin: 0 auto;
@@ -92,7 +97,7 @@ a:visited {
   margin-bottom: 0.75em;
 }
 
-.main-content section p, .main-content section ul, .main-content section div {
+.main-content section > p, .main-content section > ul, .main-content section > div {
   width: 88%;
   margin: 0 auto 0.75em;
 }
@@ -115,29 +120,6 @@ ul li {
   list-style-position: inside;
 }
 
-.clear {
-  clear: both;
-}
-
-.cf:before,
-.cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-
-.cf:after {
-  clear: both;
-}
-
-/**
- * For IE 6/7 only
- * Include this rule to trigger hasLayout and contain floats.
- */
-.cf {
-  *zoom: 1;
-}
 
 /* @end general */
 /* @group layout */
@@ -156,12 +138,9 @@ ul li {
 #footer {
   background: #fff;
 }
-#footer .inner {
-  padding: 13px 0;
-}
-
 /* @end layout */
 /* @group topography */
+
 h1 {
   text-indent: -9999px;
   height: 0;
@@ -172,7 +151,6 @@ h2 {
   color: #222;
   font-size: 1.3125em;
   line-height: 1.14286em;
-  padding-left: 0.75em;
   padding-bottom: 0.65em;
 }
 
@@ -184,173 +162,89 @@ h3 {
   color: #222;
 }
 
-#header h2 {
-  background: #fff;
+
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
 
-.about h2 {
-  background: #fff;
-}
-
-.organisers h2 {
-  background: #fff;
-}
-
-.organisers strong {
-  font-weight: bold;
-  background: #fff;
-  color: #555;
-}
-.organisers strong a {
-  color: #fff;
-}
-
-.profile h3 {
-  background: #fff;
-  color: #222;
-}
-
-.profile .main-data h3 {
-  background: none;
-  padding-left: 0;
-  font-weight: bold;
-  color: #333;
-}
-
-/* @end typograpy */
-/* @group navigation */
-.nav {
-  background: #fff;
-  overflow: auto;
+.flex-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
+
 }
-.nav li {
-  width: 48.78049%;
-  float: left;
+.flex-nav li {
+  list-style: none;
   margin-right: 2.43902%;
-  display: inline;
+  color: #444;
   text-align: center;
   font-weight: bold;
+  /*text-transform: uppercase;*/
   background: #eedfdf;
   margin-top: 0.25em;
   margin-bottom: 0.25em;
   padding: 0.25em 0;
+  flex: 1 auto;
 }
-.nav li:nth-child(2n) {
-  float: right;
-  margin-right: 0;
-  *margin-left: -0.5em;
+
+.flex-nav li:hover {
+  background: /* #ce9f9f;*/ #f02027;
+  color: #fff;
 }
-.nav li a {
+
+.flex-nav li a {
   text-decoration: none;
   color: #444;
+  display: box;
 }
-@media (min-width: 30em) {
-  .nav li {
-    width: 24.09639%;
-    float: left;
-    margin-right: 1.20482%;
-  }
-  .nav li:nth-child(2n) {
-    float: left;
-    margin-right: 1.20482%;
-  }
-  .nav li:nth-child(4n) {
-    float: right;
-    margin-right: 0;
-  }
+
+.flex-nav li:hover a {
+  color: #fff;
 }
-.nav li.current, .nav li.section-active {
+
+.flex-nav li.current {
   background: #dedede;
 }
-.nav li.gitlink a, .nav li.codehublink a {
-  color: #acc2be;
-}
-.nav li.gitlink {
-  background: #4D555B url(../img/octocat.png) no-repeat 5px 5px;
-}
-.nav li.codehublink {
-  background: url("../img/codehub.png") no-repeat scroll 5px 2px #4D555B;
+
+.flex-nav li.current a, .flex-nav li.current a:hover {
+  color: #444;
 }
 
-/* @end group */
-/* @group elements-media */
-.media, .bd {
-  overflow: hidden;
-  _overflow: visible;
-  zoom: 1;
+.img-wrapper {
+  text-align: center;
+  padding-bottom: 21px;
 }
 
-.media .img {
-  float: left;
-  margin-right: 1em;
+.resp {
+  max-width: 100%;
 }
 
-.media .img img {
-  display: block;
+footer {
+  padding: 13px 0 34px 0;
 }
 
-.media .imgExt {
-  float: right;
-}
-
-.media .imgExt.left {
-  float: left;
-}
-
-/* @end elements-media */
-/* @group elements-profile-main-data */
-/* @end elements-profile-main-data */
-/* @group elements-social */
-#social-networking li, #social-networking a {
-  width: 48px;
-  height: 48px;
-  display: block;
-  float: left;
-}
-#social-networking .twitter {
-  background-position: -71px -14px;
-}
-#social-networking .google-plus {
-  background-position: -198px -12px;
-}
-#social-networking .linkedin {
-  background-position: -390px -12px;
-}
-#social-networking .facebook {
-  background-position: -3px -14px;
-}
-#social-networking .github {
-  background-position: -12px -142px;
-}
-
-#social-networking li {
+.flex-sponsors ul {
   list-style: none;
-  background: url(../img/social-icons.jpg) no-repeat;
-}
-#social-networking li:hover {
-  opacity: 0.6;
-}
-
-/* @end elements-social */
-/* @group codehub-pages */
-li.categories {
-  margin: 0.75em 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-end;
 }
 
-/* @end codehub-pages */
+.flex-sponsors li {
+  list-style: none;
+  margin-right: 34px;
+  margin-bottom: 21px;
+}
+
 @media (min-width: 39em) {
-  /* @group general */
   body {
     background: #fff;
     color: #222;
     font-size: 1.31em;
-  }
-
-  .inner {
-    margin-right: 0;
-    margin-left: 0;
   }
 
   .margins-vert {
@@ -365,106 +259,16 @@ li.categories {
   .liberapay-btn, .margleft {
     margin-left: 0;
   }
-
-  /* @end general */
-  /* @group layout */
-  .container {
-    background: #fff;
-  }
-
 }
-@media (min-width: 39em) and (min-width: 39em) {
-  .profile .container, #header .inner, #footer .inner {
-    *zoom: 1;
-    max-width: 41.5em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .profile .container:after, #header .inner:after, #footer .inner:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
+
 
 @media (min-width: 39em) {
-  #header {
-    background: #fff;
-    /*overflow: auto;*/
-  }
-
-  #footer {
-    padding-left: 0;
-  }
-
-  .about {
-    background: #fff;
-  }
-
-  .organisers {
-    background: #fff;
-  }
-
-  footer {
-    padding-left: 0;
-  }
-
-  .main {
-    width: 41.43426%;
-    float: left;
-    margin-right: 0.39841%;
-    display: inline;
-    background: #fff;
-  }
-
-  .sidebar {
-    width: 58.16733%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -0.5em;
-    display: inline;
-    background: #fff;
-    padding-top: 90px;
-  }
-
   .section {
     padding-top: 0.75em;
   }
 }
-@media (min-width: 39em) and (min-width: 39em) {
-  .section {
-    *zoom: 1;
-    max-width: 41.5em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .section:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
 
 @media (min-width: 39em) {
-  div.about {
-    width: 100%;
-    background: #fff;
-  }
-
-  .profile-wrap {
-    background: #fff;
-  }
-
-  .skills {
-    color: #fff;
-  }
-
-  /* @end layout */
-  /* @group typography */
   #header p {
     font-size: 1.125em;
     line-height: 1.71429em;
@@ -493,45 +297,4 @@ li.categories {
     font-size: 1.3125em;
     line-height: 1.14286em;
   }
-
-  .profile h3 {
-    background: inherit;
-  }
-
-  .profile .main-data h3 {
-    color: #222;
-  }
-
-  /* @end typography */
 }
-/*@media (min-width: 60em) {
-  @import "desktop";
-} */
-/*
-$sectionPadding: 2em;
-
-%sectionValues {
-  color: $fontColor;
-  padding: $sectionPadding;
-}
-body{
-  font-size: 16px;
-  font-family: Verdana, san-serif;
-  background: #acc2be;
-  padding: 2em;
-}
-section.about {background:#5c5a57;@extend %sectionValues;}
-section  h2 {font-size: 2.5em; padding:0.5em 0;}
-section.organisers {background:#648494; @extend %sectionValues;}
-header {background:#3d454b;  font-size:1.2em; @extend %sectionValues;}
-h1{
-  font-family: 'Nova Square', Arial, sans-serif;
-  font-size: 5em;
-}
-
-
-p{
-  line-height: 1.5em;
-  margin: 0.75em 0;
-}
-strong {font-weight: 600;color:#d7a75b;} */
