@@ -170,7 +170,7 @@ h3 {
 .flex-nav ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 
@@ -239,6 +239,13 @@ footer {
   margin-bottom: 21px;
 }
 
+@media (min-width: 30em) {
+  .flex-nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 @media (min-width: 39em) {
   body {
     background: #fff;
@@ -258,16 +265,11 @@ footer {
   .liberapay-btn, .margleft {
     margin-left: 0;
   }
-}
 
-
-@media (min-width: 39em) {
   .section {
     padding-top: 0.75em;
   }
-}
 
-@media (min-width: 39em) {
   .intro p {
     font-size: 1.125em;
     line-height: 1.71429em;
@@ -296,4 +298,6 @@ footer {
     font-size: 1.3125em;
     line-height: 1.14286em;
   }
+
+
 }
