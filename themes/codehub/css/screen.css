@@ -239,6 +239,13 @@ footer {
   margin-bottom: 21px;
 }
 
+.caption {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #888
+}
+
 @media (min-width: 30em) {
   .flex-nav ul {
     flex-direction: row;
