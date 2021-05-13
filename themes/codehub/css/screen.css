@@ -98,7 +98,7 @@ a:visited {
 }
 
 .main-content section > p, .main-content section > ul, .main-content section > div {
-  width: 88%;
+  width: 95%;
   margin: 0 auto 0.75em;
 }
 
@@ -197,7 +197,7 @@ h3 {
 .flex-nav li a {
   text-decoration: none;
   color: #444;
-  display: box;
+  display: block;
 }
 
 .flex-nav li:hover a {
